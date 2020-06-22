@@ -1,33 +1,32 @@
 /**
-  * <ReactFormBuilder />
-  */
+ * <ReactFormBuilder />
+ */
 
-import React from 'react';
+import React from 'react'
 import Preview from './preview'
 import Toolbar from './toolbar'
-import ElementActions from './actions/ElementActions';
-import ReactFormGenerator from './form';
+import ElementActions from './actions/ElementActions'
+import ReactFormGenerator from './form'
 
-let FormBuilders = {};
+let FormBuilders = {}
 
 class ReactFormBuilder extends React.Component {
-
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       editMode: false,
-      editElement: null
+      editElement: null,
     }
-    document.addEventListener("click", this.editModeOff.bind(this));
+    document.addEventListener('click', this.editModeOff.bind(this))
   }
 
   editModeOn(data, e) {
     e.stopPropagation()
     if (this.state.editMode) {
-      this.setState({editMode: !this.state.editMode, editElement: null});
+      this.setState({ editMode: !this.state.editMode, editElement: null })
     } else {
-      this.setState({editMode: !this.state.editMode, editElement: data});
+      this.setState({ editMode: !this.state.editMode, editElement: data })
     }
   }
 
@@ -35,32 +34,33 @@ class ReactFormBuilder extends React.Component {
     if (this.state.editMode) {
       this.setState({
         editMode: false,
-        editElement: null
-      });
+        editElement: null,
+      })
     }
   }
 
   editModeOff(e) {
-    const $menu = $(".edit-form");
-    let click_is_outside_menu = (!$menu.is(e.target) && $menu.has(e.target).length === 0);
+    const $menu = $('.edit-form')
+    let click_is_outside_menu =
+      !$menu.is(e.target) && $menu.has(e.target).length === 0
 
     if (this.state.editMode && click_is_outside_menu) {
       this.setState({
         editMode: false,
-        editElement: null
-      });
+        editElement: null,
+      })
     }
   }
 
   render() {
-    let toolbarProps = {};
-    if (this.props.toolbarItems)
-      toolbarProps.items = this.props.toolbarItems;
+    let toolbarProps = {}
+    if (this.props.toolbarItems) toolbarProps.items = this.props.toolbarItems
     return (
       <div>
         <div className="react-form-builder clearfix">
           <div>
-            <Preview files={this.props.files}
+            <Preview
+              files={this.props.files}
               manualEditModeOff={this.manualEditModeOff.bind(this)}
               parent={this}
               url={this.props.url}
@@ -68,17 +68,17 @@ class ReactFormBuilder extends React.Component {
               editModeOn={this.editModeOn}
               editMode={this.state.editMode}
               variables={this.props.variables}
-              editElement={this.state.editElement} />
+              editElement={this.state.editElement}
+            />
             <Toolbar {...toolbarProps} />
           </div>
         </div>
       </div>
-    );
+    )
   }
-
 }
 
-FormBuilders.ReactFormBuilder = ReactFormBuilder;
-FormBuilders.ReactFormGenerator = ReactFormGenerator;
+FormBuilders.ReactFormBuilder = ReactFormBuilder
+FormBuilders.ReactFormGenerator = ReactFormGenerator
 
-module.exports = FormBuilders;
+module.exports = FormBuilders

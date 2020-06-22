@@ -1,10 +1,10 @@
-input[type="date"]:before {
+input[type='date']:before {
   content: attr(placeholder);
   color: #aaa;
   margin-right: 0.5em;
 }
 
-input[type="date"] {
+input[type='date'] {
   width: 200px;
 }
 .validation-error {
@@ -24,9 +24,15 @@ input[type="date"] {
 .react-form-builder-form {
   position: relative;
 
-  .rfb-item.alwaysbreak { page-break-before: always; }
-  .rfb-item.nobreak:before { clear:both; }
-  .rfb-item.nobreak { page-break-inside: avoid; }
+  .rfb-item.alwaysbreak {
+    page-break-before: always;
+  }
+  .rfb-item.nobreak:before {
+    clear: both;
+  }
+  .rfb-item.nobreak {
+    page-break-inside: avoid;
+  }
 
   .rfb-item {
     padding: 10px 0;
@@ -65,7 +71,8 @@ input[type="date"] {
       .react-star-rating {
         display: block;
       }
-      .checkbox-label, .radio-label {
+      .checkbox-label,
+      .radio-label {
         font-weight: normal;
         display: block;
       }

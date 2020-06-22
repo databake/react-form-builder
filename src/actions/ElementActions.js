@@ -1,11 +1,11 @@
-var Reflux = require('reflux');
+var Reflux = require('reflux')
 
 var ElementActions = Reflux.createActions([
   'createElement',
   'editElement',
   'deleteElement',
   'saveData',
-  'save'
-]);
+  'save',
+])
 
-module.exports = ElementActions;
+module.exports = ElementActions
