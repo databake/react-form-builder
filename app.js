@@ -4,7 +4,6 @@ import DemoBar from './demobar'
 import FormBuilder from './src/index'
 import * as variables from './variables'
 
-// Add our stylesheets for the demo.
 require('./css/application.css.scss')
 
 ReactDOM.render(

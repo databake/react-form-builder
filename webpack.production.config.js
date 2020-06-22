@@ -1,11 +1,11 @@
 module.exports = {
   entry: {
-    app: ["./src/index.jsx"]
+    app: ['./src/index.'],
   },
 
   output: {
-    path: __dirname + "/lib",
-    filename: "app.js",
+    path: __dirname + '/lib',
+    filename: 'app.js',
     library: 'ReactFormBuilder',
     libraryTarget: 'umd',
   },
@@ -13,32 +13,32 @@ module.exports = {
   externals: {
     //don't bundle the 'react' npm package with our bundle.js
     //but get it from a global 'React' variable
-    'react': 'react',
+    react: 'react',
     'react-dom': 'react-dom',
     'react-datepicker': 'react-datepicker',
     'react/addons': 'react/addons',
-    'classnames': 'classnames',
-    'jquery': 'jquery',
-    'bootstrap': 'bootstrap'
+    classnames: 'classnames',
+    jquery: 'jquery',
+    bootstrap: 'bootstrap',
   },
 
   module: {
     loaders: [
       {
-        test: /.jsx?$/,
+        test: /.js?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
-          presets: ['es2015', 'react']
-        }
+          presets: ['es2015', 'react'],
+        },
       },
       {
         test: /\.scss$/,
-        loader: "style-loader!css-loader!sass-loader"
-      }
-    ]
+        loader: 'style-loader!css-loader!sass-loader',
+      },
+    ],
   },
   resolve: {
-    extensions: ['', '.js', '.json', '.jsx', '.css', '.scss']
-  }
+    extensions: ['', '.js', '.json', '.jsx', '.css', '.scss'],
+  },
 }
