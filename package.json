@@ -28,6 +28,8 @@
     "fbemitter": "^2.0.0",
     "jquery": "^3.2.1",
     "moment": "^2.13.0",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
     "react-anything-sortable": "^0.2.2",
     "react-bootstrap-native-slider": "2.0.1",
     "react-datepicker": "^0.27.0",
@@ -59,8 +61,6 @@
     "mocha-jsdom": "^1.1.0",
     "node-libs-browser": "^1.0.0",
     "node-sass": "^3.8.0",
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7",
     "react-draft-wysiwyg": "1.7.0",
     "react-hot-loader": "^1.2.7",
     "react-tools": "0.13.3",
@@ -73,5 +73,9 @@
   "bugs": {
     "url": "https://github.com/blackjk3/react-form-builder/issues"
   },
-  "homepage": "https://github.com/blackjk3/react-form-builder#readme"
+  "homepage": "https://github.com/blackjk3/react-form-builder#readme",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  }
 }
