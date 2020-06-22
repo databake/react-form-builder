@@ -129,6 +129,6 @@ In order to run tests you will need to install Cairo which is needed for node-ca
 
 # To build
 
-```javascript
-yarn add node-sass
+```bash
+$ yarn add node-sass
 ```
